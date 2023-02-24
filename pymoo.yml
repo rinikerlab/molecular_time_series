@@ -1,0 +1,20 @@
+name: pymoo
+channels:
+  - conda-forge
+dependencies:
+  - python=3.9
+  - rdkit=2021.09
+  - pymoo=0.5
+  - ipython
+  - jupyter
+  - matplotlib
+  - ca-certificates
+  - openssl
+  - ipython-sql
+  - certifi
+  - psycopg2
+  - intake
+  - jupyter_contrib_nbextensions
+  - umap-learn
+  - yapf
+prefix: /localhome/glandrum/.conda/envs/pymoo

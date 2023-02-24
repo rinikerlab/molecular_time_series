@@ -1,0 +1,20 @@
+metadata:
+  version: 1
+  creator: 
+    name: greg landrum
+    email: glandrum@ethz.ch
+
+sources:
+  assays:
+    args:
+      path: '{{ CATALOG_DIR }}/assays.yaml'
+    description: 'single-assay datasets from ChEBML for bioactivity prediction'
+    driver: intake.catalog.local.YAMLFileCatalog
+    metadata: {}
+
+  SIMPD:
+    args:
+      path: '{{ CATALOG_DIR }}/chemblassay_SIMPD.yaml'
+    description: 'SIMPD splits of ChEMBL assay datasets'
+    driver: intake.catalog.local.YAMLFileCatalog
+    metadata: {}
