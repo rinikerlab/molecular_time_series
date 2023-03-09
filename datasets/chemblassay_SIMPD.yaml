@@ -8,7 +8,9 @@ metadata:
 
     Each row includes the reported value. Only values without data_validity_comments are included
     Active/inactive class assignments were done to give a 40/60 inactive/active ratio
-    The suggested train/test split was created using the SIMPD algorithm
+    The suggested train/test split was created using the SIMPD algorithm, described in the publication
+    https://chemrxiv.org/engage/chemrxiv/article-details/6406049e6642bf8c8f10e189
+    
   split_column: split
   class_column: active
   activity_column: standard_value

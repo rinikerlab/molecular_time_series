@@ -3,6 +3,13 @@ metadata:
   creator: 
     name: greg landrum
     email: glandrum@ethz.ch
+  summary: |
+    Collection of datasets from the publication
+    G.A. Landrum, M. Beckers, J. Lanini, N. Schneider, N. Stiefl, S. Riniker 
+    "SIMPD: an Algorithm for Generating Simulated Time Splits for Validating Machine Learning Approaches"
+    https://chemrxiv.org/engage/chemrxiv/article-details/6406049e6642bf8c8f10e189
+
+    Please cite our paper if you use these datasets.    
 
 sources:
   assays:

@@ -1,3 +1,12 @@
+# Citation
+
+This repo contains the code and datasets for the publication
+
+    G.A. Landrum, M. Beckers, J. Lanini, N. Schneider, N. Stiefl, S. Riniker 
+    "SIMPD: an Algorithm for Generating Simulated Time Splits for Validating Machine Learning Approaches"
+    https://chemrxiv.org/engage/chemrxiv/article-details/6406049e6642bf8c8f10e189
+
+
 # Data and results
 
 ## Directories:
