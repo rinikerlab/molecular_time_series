@@ -9,42 +9,42 @@ sys.path.append(RDPaths.RDContribDir)
 from rdkit import Chem
 from rdkit.Chem import rdMolDescriptors
 from rdkit.Chem import Descriptors
+from rdkit.Chem.MolStandardize import rdMolStandardize
 
 from rdkit.Chem import Crippen
 from SA_Score import sascorer
 
 # The GA scenario targets
-# scatter((74,80,72,78),(61,66,51,54),color='r')    
+# scatter((74,80,72,78),(61,66,51,54),color='r')
 
-target_FG_vals = [(61,74),(66,80),(51,72),(54,78)]
+target_FG_vals = [(61, 74), (66, 80), (51, 72), (54, 78)]
 delta_test_active_frac_vals = [.11, .30]
-
 
 #*************************************************************************************
 #***************************  This function runs the GA ******************************
 #*************************************************************************************
 from pymoo.core.problem import starmap_parallelized_eval
-from pymoo.core.problem import elementwise_eval,looped_eval
+from pymoo.core.problem import elementwise_eval, looped_eval
 
 from multiprocessing.pool import ThreadPool
 
 
 def run_GA_old(df,
-           strategy="CLUSTERS_SPLIT",
-           pop_size=500,
-           ngens=100,
-           verbose=False,
-           numThreads=1,
-           seed_input=0xf00d,
-           return_random_result=True,
-           smilesCol='Smiles',
-           actCol='Property_1',
-           targetTrainFracActive=-1,
-           targetTestFracActive=-1,
-           targetDeltaTestFracActive=None,
-           targetFval=None,
-           targetGval=None,
-           skipDescriptors=False):
+               strategy="CLUSTERS_SPLIT",
+               pop_size=500,
+               ngens=100,
+               verbose=False,
+               numThreads=1,
+               seed_input=0xf00d,
+               return_random_result=True,
+               smilesCol='Smiles',
+               actCol='Property_1',
+               targetTrainFracActive=-1,
+               targetTestFracActive=-1,
+               targetDeltaTestFracActive=None,
+               targetFval=None,
+               targetGval=None,
+               skipDescriptors=False):
     ''' Runs the GA using descriptors + activity distribution + F + G
     This is not the form used for SIMPD
     '''
@@ -121,12 +121,14 @@ def run_GA_old(df,
             dvals[:keep],
             dtgts,
             n_max,
-            runner=runner,func_eval=func_eval,
+            runner=runner,
+            func_eval=func_eval,
             clusters=clusters,
             targetTrainFracActive=targetTrainFracActive,
             targetTestFracActive=targetTestFracActive,
             targetDeltaTestFracActive=targetDeltaTestFracActive,
-            targetFval=targetFval,targetGval=targetGval)
+            targetFval=targetFval,
+            targetGval=targetGval)
     else:
         problem = SplitProblem_JustFracActive(
             binned[:keep],
@@ -135,12 +137,14 @@ def run_GA_old(df,
             dvals[:keep],
             dtgts,
             n_max,
-            runner=runner,func_eval=func_eval,
+            runner=runner,
+            func_eval=func_eval,
             clusters=clusters,
             targetTrainFracActive=targetTrainFracActive,
             targetTestFracActive=targetTestFracActive,
             targetDeltaTestFracActive=targetDeltaTestFracActive,
-            targetFval=targetFval,targetGval=targetGval)
+            targetFval=targetFval,
+            targetGval=targetGval)
 
     algorithm = NSGA2(pop_size=pop_size,
                       sampling=ClusterSampling(selectionStrategy=sel_strategy,
@@ -176,19 +180,20 @@ def run_GA_old(df,
     else:
         return train_inds, tests_inds, res
 
+
 def run_GA_SIMPD(df,
-           strategy="CLUSTERS_SPLIT",
-           pop_size=500,
-           ngens=100,
-           verbose=False,
-           numThreads=1,
-           seed_input=0xf00d,
-           return_random_result=True,
-           smilesCol='Smiles',
-           actCol='Property_1',
-           targetTrainFracActive=-1,
-           targetTestFracActive=-1,
-           targetDeltaTestFracActive=None):
+                 strategy="CLUSTERS_SPLIT",
+                 pop_size=500,
+                 ngens=100,
+                 verbose=False,
+                 numThreads=1,
+                 seed_input=0xf00d,
+                 return_random_result=True,
+                 smilesCol='Smiles',
+                 actCol='Property_1',
+                 targetTrainFracActive=-1,
+                 targetTestFracActive=-1,
+                 targetDeltaTestFracActive=None):
     ''' Runs the GA using descriptors + activity distribution + (G-F) + G
     This is the form used for SIMPD
     '''
@@ -206,7 +211,7 @@ def run_GA_SIMPD(df,
 
     sel_strategy = getattr(SelectionStrategy, strategy)
     df["mol"] = [
-        Chem.MolFromSmiles(tmp_smi)
+        rdMolStandardize.ChargeParent(Chem.MolFromSmiles(tmp_smi))
         for tmp_smi in df[smilesCol].to_numpy(dtype=str)
     ]
 
@@ -265,12 +270,12 @@ def run_GA_SIMPD(df,
         dvals[:keep],
         dtgts,
         n_max,
-        runner=runner,func_eval=func_eval,
+        runner=runner,
+        func_eval=func_eval,
         clusters=clusters,
         targetTrainFracActive=targetTrainFracActive,
         targetTestFracActive=targetTestFracActive,
         targetDeltaTestFracActive=targetDeltaTestFracActive)
-
 
     algorithm = NSGA2(pop_size=pop_size,
                       sampling=ClusterSampling(selectionStrategy=sel_strategy,
@@ -305,10 +310,6 @@ def run_GA_SIMPD(df,
             sample_ind_returned], res
     else:
         return train_inds, tests_inds, res
-
-
-
-
 
 
 #*************************************************************************************
@@ -645,9 +646,9 @@ def map_activity_to_idg_val(target_desc, standard_activity):
 
 
 def get_imbalanced_bins_orig(data,
-                        tgt_frac=0.2,
-                        step_size=0.5,
-                        active_inactive_offset=0.5):
+                             tgt_frac=0.2,
+                             step_size=0.5,
+                             active_inactive_offset=0.5):
     vs = list(sorted(data, reverse=True))
     tgt = int(tgt_frac * len(vs))
     act = vs[tgt]
@@ -658,47 +659,54 @@ def get_imbalanced_bins_orig(data,
     lowerAct = binAct - active_inactive_offset
     return binAct, lowerAct
 
+
 def get_imbalanced_bins(data,
                         tgt_frac=0.2,
                         step_size=0.1,
                         active_inactive_offset=0.5,
-                        tol = 0.01):
+                        tol=0.01):
     vs = list(sorted(data, reverse=True))
     tgt = int(tgt_frac * len(vs))
     act = vs[tgt]
     # "round"
     binAct = int(act / step_size) * step_size
-    remain = [x for x in vs if x >= binAct or x <= (binAct-active_inactive_offset)]
+    remain = [
+        x for x in vs if x >= binAct or x <= (binAct - active_inactive_offset)
+    ]
     fRemain = sum([1 for x in remain if x >= binAct]) / len(remain)
     d = abs(fRemain - tgt_frac)
     lastD = 1e8
-    while d<lastD and d>tol:
+    while d < lastD and d > tol:
         if fRemain < tgt_frac:
             binAct -= step_size
         else:
             binAct += step_size
         lastD = d
-        remain = [x for x in vs if x >= binAct or x <= (binAct-active_inactive_offset)]
+        remain = [
+            x for x in vs
+            if x >= binAct or x <= (binAct - active_inactive_offset)
+        ]
     lowerAct = binAct - active_inactive_offset
     return binAct, lowerAct
 
-def score_pareto_solutions(Fs,weights):
+
+def score_pareto_solutions(Fs, weights):
     Fs = np.copy(Fs)
-    qs = np.quantile(Fs,0.9,axis=0)
-    maxv = np.max(np.abs(Fs),axis=0)
-    for i,q in enumerate(qs):
-        if q==0:
+    qs = np.quantile(Fs, 0.9, axis=0)
+    maxv = np.max(np.abs(Fs), axis=0)
+    for i, q in enumerate(qs):
+        if q == 0:
             qs[i] = maxv[i]
             if qs[i] == 0:
                 qs[i] = 1
     Fs /= qs
-    Fs = np.exp(Fs*-1)
-    weights = np.array(weights,float)
+    Fs = np.exp(Fs * -1)
+    weights = np.array(weights, float)
     # normalize:
     weights /= np.sum(weights)
-    
+
     Fs *= weights
-    return np.sum(Fs,axis=1)
+    return np.sum(Fs, axis=1)
 
 
 # ---------------------------------
@@ -791,10 +799,12 @@ def population_tanimoto(pop1, pop2):
 #******************************* GA utilities ***************************************
 #************************************************************************************
 
-from pymoo.core.problem import ElementwiseProblem,elementwise_eval,looped_eval
+from pymoo.core.problem import ElementwiseProblem, elementwise_eval, looped_eval
+
 
 class SplitProblem_NoR_TargetDescriptorDeltas(ElementwiseProblem):
     ''' pymoo problem form not used in SIMPD '''
+
     def __init__(self,
                  binned_acts,
                  fps,
@@ -863,7 +873,8 @@ class SplitProblem_NoR_TargetDescriptorDeltas(ElementwiseProblem):
         if self.tgtFrac is not None:
             objectives.append(abs(test_frac - self.tgtFrac))
         elif self.deltaTestFracActive is not None:
-            dTestFracActive = test_frac - np.sum(self.acts, axis=0)/len(self.acts)
+            dTestFracActive = test_frac - np.sum(self.acts, axis=0) / len(
+                self.acts)
             # print(f'  {test_frac:.2f} {np.sum(self.acts, axis=0)/len(self.acts):.2f} {dTestFracActive:.2f}')
             objectives.append(abs(self.deltaTestFracActive - dTestFracActive))
         else:
@@ -883,7 +894,7 @@ class SplitProblem_NoR_TargetDescriptorDeltas(ElementwiseProblem):
             if self.tgtGval is not None:
                 sum_G = np.sum(g_vals)
                 objectives.append(abs(sum_G - self.tgtGval))
-            
+
         # objectives:
         out["F"] = objectives
         # constraints:
@@ -895,6 +906,7 @@ class SplitProblem_NoR_TargetDescriptorDeltas(ElementwiseProblem):
 
 class SplitProblem_JustFracActive(ElementwiseProblem):
     ''' pymoo problem form not used in SIMPD '''
+
     def __init__(self,
                  binned_acts,
                  fps,
@@ -946,7 +958,8 @@ class SplitProblem_JustFracActive(ElementwiseProblem):
         if self.tgtFrac is not None:
             objectives.append(abs(test_frac - self.tgtFrac))
         elif self.deltaTestFracActive is not None:
-            dTestFracActive = test_frac - np.sum(self.acts, axis=0)/len(self.acts)
+            dTestFracActive = test_frac - np.sum(self.acts, axis=0) / len(
+                self.acts)
             # print(f'  {test_frac:.2f} {np.sum(self.acts, axis=0)/len(self.acts):.2f} {dTestFracActive:.2f}')
             objectives.append(abs(self.deltaTestFracActive - dTestFracActive))
         else:
@@ -965,6 +978,7 @@ class SplitProblem_JustFracActive(ElementwiseProblem):
 
 class SplitProblem_DescriptorAndFGDeltas(ElementwiseProblem):
     ''' This is the pymoo Problem form used for SIMPD '''
+
     def __init__(self,
                  binned_acts,
                  fps,
@@ -976,7 +990,7 @@ class SplitProblem_DescriptorAndFGDeltas(ElementwiseProblem):
                  targetTrainFracActive=-1,
                  targetTestFracActive=-1,
                  targetDeltaTestFracActive=None,
-                 targetGFDeltaWindow=(10,30),
+                 targetGFDeltaWindow=(10, 30),
                  targetGval=70,
                  **kwargs):
         assert len(binned_acts) == len(fps)
@@ -1033,7 +1047,8 @@ class SplitProblem_DescriptorAndFGDeltas(ElementwiseProblem):
         if self.tgtFrac is not None:
             objectives.append(abs(test_frac - self.tgtFrac))
         elif self.deltaTestFracActive is not None:
-            dTestFracActive = test_frac - np.sum(self.acts, axis=0)/len(self.acts)
+            dTestFracActive = test_frac - np.sum(self.acts, axis=0) / len(
+                self.acts)
             objectives.append(abs(self.deltaTestFracActive - dTestFracActive))
         else:
             if self.tgtTrainFrac > 0:
@@ -1048,10 +1063,10 @@ class SplitProblem_DescriptorAndFGDeltas(ElementwiseProblem):
         sum_F = np.sum(f_vals)
         sum_G = np.sum(g_vals)
         delt = sum_G - sum_F
-        if delt>self.tgtDeltaGFWindow[1]:
-            objectives.append(delt-self.tgtDeltaGFWindow[1])
-        elif delt<self.tgtDeltaGFWindow[0]:
-            objectives.append(self.tgtDeltaGFWindow[0]-delt)
+        if delt > self.tgtDeltaGFWindow[1]:
+            objectives.append(delt - self.tgtDeltaGFWindow[1])
+        elif delt < self.tgtDeltaGFWindow[0]:
+            objectives.append(self.tgtDeltaGFWindow[0] - delt)
         else:
             objectives.append(0)
 
@@ -1069,7 +1084,6 @@ class SplitProblem_DescriptorAndFGDeltas(ElementwiseProblem):
             out["G"].append(population_cluster_entropy(x, self.clusters) - 0.9)
 
 
-
 from pymoo.core.crossover import Crossover
 from pymoo.core.mutation import Mutation
 from pymoo.core.sampling import Sampling
@@ -1080,8 +1094,9 @@ class MySampling(Sampling):
     
     This is adapted from the pymoo documentation
     '''
+
     def _do(self, problem, n_samples, **kwargs):
-        X = np.full((n_samples, problem.n_var), False, dtype=np.bool)
+        X = np.full((n_samples, problem.n_var), False, dtype=bool)
 
         for k in range(n_samples):
             I = np.random.permutation(problem.n_var)[:problem.n_max]
@@ -1089,11 +1104,13 @@ class MySampling(Sampling):
 
         return X
 
+
 class BinaryCrossover2(Crossover):
     ''' crossover implementation for SIMPD
     
     This is adapted from the pymoo documentation
-    '''    
+    '''
+
     def __init__(self):
         super().__init__(2, 1)
 
@@ -1123,6 +1140,7 @@ class MyMutation2(Mutation):
     
     This is adapted from the pymoo documentation
     '''
+
     def _do(self, problem, X, **kwargs):
         for i in range(X.shape[0]):
             X[i, :] = X[i, :]
@@ -1247,6 +1265,7 @@ class ClusterSampling(Sampling):
     ''' cluster sampling implementation for SIMPD
     
     '''
+
     def _do(self, problem, n_samples, **kwargs):
         X = np.full((n_samples, problem.n_var), False, dtype=np.bool)
 
@@ -1281,11 +1300,10 @@ class ClusterSampling(Sampling):
             nSamples=n_samples,
             selectionStrategy=self._selectionStrategy,
             clusters=self._clusters)
-        X = np.full((n_samples, problem.n_var), False, dtype=np.bool)
+        X = np.full((n_samples, problem.n_var), False, dtype=bool)
 
         for k in range(n_samples):
             I = assignments[k]
             X[k, I] = True
 
         return X
-
