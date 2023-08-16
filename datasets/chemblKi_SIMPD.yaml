@@ -1,0 +1,2591 @@
+metadata:
+  version: 1
+  creator:
+    name: greg landrum
+    email: glandrum@ethz.ch
+  summary: |
+    Collection of datasets with pchembl_values for bioactivity prediction.
+
+    Each row includes the reported value. Only values without data_validity_comments are included
+    Active/inactive class assignments were done to give a 40/60 inactive/active ratio
+    The suggested train/test split was created using the SIMPD algorithm
+    All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer
+  split_column: split
+  class_column: active
+  activity_column: standard_value
+
+sources:
+  CHEMBL217-1:
+    description: "Target CHEMBL217: Dopamine D2 receptor"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL217-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL217/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000357
+      activity_type: Ki
+      min pchembl_value: 4.14
+      max pchembl_value: 10.57
+      median pchembl_value: 6.82
+      is_log_data: true
+      activity bin: 7.1
+      Compounds: 996
+      Num Active: 378
+      Num Inactive: 618
+
+  CHEMBL219-1:
+    description: "Target CHEMBL219: Dopamine D4 receptor"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL219-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL219/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000219
+      activity_type: Ki
+      min pchembl_value: 4.05
+      max pchembl_value: 9.6
+      median pchembl_value: 7.17
+      is_log_data: true
+      activity bin: 7.5
+      Compounds: 969
+      Num Active: 375
+      Num Inactive: 594
+
+  CHEMBL259-1:
+    description: "Target CHEMBL259: Melanocortin receptor 4"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL259-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL259/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000219
+      activity_type: Ki
+      min pchembl_value: 4.07
+      max pchembl_value: 9.85
+      median pchembl_value: 7.06
+      is_log_data: true
+      activity bin: 7.300000000000001
+      Compounds: 925
+      Num Active: 376
+      Num Inactive: 549
+
+  CHEMBL4792-1:
+    description: "Target CHEMBL4792: Orexin receptor 2"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL4792-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL4792/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000357
+      activity_type: Ki
+      min pchembl_value: 4.96
+      max pchembl_value: 10.15
+      median pchembl_value: 6.9
+      is_log_data: true
+      activity bin: 7.2
+      Compounds: 907
+      Num Active: 341
+      Num Inactive: 566
+
+  CHEMBL253-1:
+    description: "Target CHEMBL253: Cannabinoid CB2 receptor"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL253-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL253/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000357
+      activity_type: Ki
+      min pchembl_value: 4.02
+      max pchembl_value: 10.72
+      median pchembl_value: 7.54
+      is_log_data: true
+      activity bin: 7.800000000000001
+      Compounds: 881
+      Num Active: 360
+      Num Inactive: 521
+
+  CHEMBL255-1:
+    description: "Target CHEMBL255: Adenosine A2b receptor"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL255-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL255/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000219
+      activity_type: Ki
+      min pchembl_value: 4.33
+      max pchembl_value: 9.22
+      median pchembl_value: 7.24
+      is_log_data: true
+      activity bin: 7.5
+      Compounds: 861
+      Num Active: 343
+      Num Inactive: 518
+
+  CHEMBL228-1:
+    description: "Target CHEMBL228: Serotonin transporter"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL228-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL228/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000219
+      activity_type: Ki
+      min pchembl_value: 4.14
+      max pchembl_value: 11.0
+      median pchembl_value: 7.18
+      is_log_data: true
+      activity bin: 7.6
+      Compounds: 858
+      Num Active: 337
+      Num Inactive: 521
+
+  CHEMBL214-1:
+    description: "Target CHEMBL214: Serotonin 1a (5-HT1a) receptor"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL214-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL214/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000357
+      activity_type: Ki
+      min pchembl_value: 4.06
+      max pchembl_value: 10.0
+      median pchembl_value: 7.23
+      is_log_data: true
+      activity bin: 7.6
+      Compounds: 837
+      Num Active: 318
+      Num Inactive: 519
+
+  CHEMBL224-1:
+    description: "Target CHEMBL224: Serotonin 2a (5-HT2a) receptor"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL224-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL224/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000357
+      activity_type: Ki
+      min pchembl_value: 4.13
+      max pchembl_value: 10.4
+      median pchembl_value: 7.0
+      is_log_data: true
+      activity bin: 7.4
+      Compounds: 830
+      Num Active: 324
+      Num Inactive: 506
+
+  CHEMBL2014-1:
+    description: "Target CHEMBL2014: Nociceptin receptor"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL2014-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL2014/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000219
+      activity_type: Ki
+      min pchembl_value: 5.0
+      max pchembl_value: 10.7
+      median pchembl_value: 7.82
+      is_log_data: true
+      activity bin: 8.1
+      Compounds: 749
+      Num Active: 292
+      Num Inactive: 457
+
+  CHEMBL3759-1:
+    description: "Target CHEMBL3759: Histamine H4 receptor"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL3759-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL3759/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000219
+      activity_type: Ki
+      min pchembl_value: 4.14
+      max pchembl_value: 9.0
+      median pchembl_value: 6.52
+      is_log_data: true
+      activity bin: 6.9
+      Compounds: 732
+      Num Active: 283
+      Num Inactive: 449
+
+  CHEMBL264-1:
+    description: "Target CHEMBL264: Histamine H3 receptor"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL264-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL264/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000357
+      activity_type: Ki
+      min pchembl_value: 4.44
+      max pchembl_value: 10.3
+      median pchembl_value: 8.05
+      is_log_data: true
+      activity bin: 8.4
+      Compounds: 723
+      Num Active: 279
+      Num Inactive: 444
+
+  CHEMBL344-1:
+    description: "Target CHEMBL344: Melanin-concentrating hormone receptor 1"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL344-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL344/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000219
+      activity_type: Ki
+      min pchembl_value: 4.68
+      max pchembl_value: 9.77
+      median pchembl_value: 7.64
+      is_log_data: true
+      activity bin: 7.800000000000001
+      Compounds: 687
+      Num Active: 281
+      Num Inactive: 406
+
+  CHEMBL4860-1:
+    description: "Target CHEMBL4860: Apoptosis regulator Bcl-2"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL4860-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL4860/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000357
+      activity_type: Ki
+      min pchembl_value: 4.3
+      max pchembl_value: 11.0
+      median pchembl_value: 7.94
+      is_log_data: true
+      activity bin: 8.700000000000001
+      Compounds: 694
+      Num Active: 278
+      Num Inactive: 416
+
+  CHEMBL245-1:
+    description: "Target CHEMBL245: Muscarinic acetylcholine receptor M3"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL245-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL245/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000219
+      activity_type: Ki
+      min pchembl_value: 4.06
+      max pchembl_value: 11.0
+      median pchembl_value: 7.77
+      is_log_data: true
+      activity bin: 8.4
+      Compounds: 690
+      Num Active: 275
+      Num Inactive: 415
+
+  CHEMBL5071-1:
+    description: "Target CHEMBL5071: G protein-coupled receptor 44"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL5071-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL5071/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000219
+      activity_type: Ki
+      min pchembl_value: 4.93
+      max pchembl_value: 10.0
+      median pchembl_value: 7.55
+      is_log_data: true
+      activity bin: 7.800000000000001
+      Compounds: 690
+      Num Active: 276
+      Num Inactive: 414
+
+  CHEMBL4794-1:
+    description: "Target CHEMBL4794: Vanilloid receptor"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL4794-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL4794/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000219
+      activity_type: Ki
+      min pchembl_value: 4.82
+      max pchembl_value: 10.7
+      median pchembl_value: 8.24
+      is_log_data: true
+      activity bin: 8.6
+      Compounds: 686
+      Num Active: 262
+      Num Inactive: 424
+
+  CHEMBL5113-1:
+    description: "Target CHEMBL5113: Orexin receptor 1"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL5113-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL5113/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000357
+      activity_type: Ki
+      min pchembl_value: 4.19
+      max pchembl_value: 10.22
+      median pchembl_value: 5.88
+      is_log_data: true
+      activity bin: 6.1
+      Compounds: 678
+      Num Active: 258
+      Num Inactive: 420
+
+  CHEMBL5113-2:
+    description: "Target CHEMBL5113: Orexin receptor 1"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL5113-2.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL5113/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000219
+      activity_type: Ki
+      min pchembl_value: 4.36
+      max pchembl_value: 9.7
+      median pchembl_value: 6.92
+      is_log_data: true
+      activity bin: 7.2
+      Compounds: 642
+      Num Active: 260
+      Num Inactive: 382
+
+  CHEMBL234-1:
+    description: "Target CHEMBL234: Dopamine D3 receptor"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL234-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL234/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000357
+      activity_type: Ki
+      min pchembl_value: 4.59
+      max pchembl_value: 10.07
+      median pchembl_value: 7.13
+      is_log_data: true
+      activity bin: 7.5
+      Compounds: 640
+      Num Active: 248
+      Num Inactive: 392
+
+  CHEMBL1908389-1:
+    description: "Target CHEMBL1908389: Mitogen-activated protein kinase kinase kinase 12"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL1908389-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL1908389/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000357
+      activity_type: Ki
+      min pchembl_value: 5.19
+      max pchembl_value: 10.22
+      median pchembl_value: 7.7
+      is_log_data: true
+      activity bin: 7.9
+      Compounds: 630
+      Num Active: 255
+      Num Inactive: 375
+
+  CHEMBL3769-1:
+    description: "Target CHEMBL3769: Trypsin I"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL3769-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL3769/
+      source: ChEMBL_32
+      organism: Bos taurus
+      assay_organism: Bos taurus
+      assay_bao_format: BAO_0000357
+      activity_type: Ki
+      min pchembl_value: 4.06
+      max pchembl_value: 10.7
+      median pchembl_value: 6.26
+      is_log_data: true
+      activity bin: 6.6
+      Compounds: 627
+      Num Active: 247
+      Num Inactive: 380
+
+  CHEMBL4005-1:
+    description: "Target CHEMBL4005: PI3-kinase p110-alpha subunit"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL4005-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL4005/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000357
+      activity_type: Ki
+      min pchembl_value: 4.64
+      max pchembl_value: 9.96
+      median pchembl_value: 7.47
+      is_log_data: true
+      activity bin: 7.7
+      Compounds: 619
+      Num Active: 251
+      Num Inactive: 368
+
+  CHEMBL240-1:
+    description: "Target CHEMBL240: HERG"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL240-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL240/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000357
+      activity_type: Ki
+      min pchembl_value: 4.07
+      max pchembl_value: 8.89
+      median pchembl_value: 5.6
+      is_log_data: true
+      activity bin: 5.8
+      Compounds: 606
+      Num Active: 242
+      Num Inactive: 364
+
+  CHEMBL238-1:
+    description: "Target CHEMBL238: Dopamine transporter"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL238-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL238/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000219
+      activity_type: Ki
+      min pchembl_value: 4.01
+      max pchembl_value: 9.4
+      median pchembl_value: 6.29
+      is_log_data: true
+      activity bin: 6.5
+      Compounds: 592
+      Num Active: 237
+      Num Inactive: 355
+
+  CHEMBL2820-1:
+    description: "Target CHEMBL2820: Coagulation factor XI"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL2820-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL2820/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000357
+      activity_type: Ki
+      min pchembl_value: 3.61
+      max pchembl_value: 10.7
+      median pchembl_value: 7.17
+      is_log_data: true
+      activity bin: 7.6000000000000005
+      Compounds: 585
+      Num Active: 235
+      Num Inactive: 350
+
+  CHEMBL4908-1:
+    description: "Target CHEMBL4908: Trace amine-associated receptor 1"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL4908-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL4908/
+      source: ChEMBL_32
+      organism: Mus musculus
+      assay_organism: Mus musculus
+      assay_bao_format: BAO_0000357
+      activity_type: Ki
+      min pchembl_value: 5.13
+      max pchembl_value: 10.0
+      median pchembl_value: 8.54
+      is_log_data: true
+      activity bin: 8.7
+      Compounds: 583
+      Num Active: 224
+      Num Inactive: 359
+
+  CHEMBL222-1:
+    description: "Target CHEMBL222: Norepinephrine transporter"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL222-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL222/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000219
+      activity_type: Ki
+      min pchembl_value: 4.03
+      max pchembl_value: 9.52
+      median pchembl_value: 6.71
+      is_log_data: true
+      activity bin: 7.0
+      Compounds: 580
+      Num Active: 236
+      Num Inactive: 344
+
+  CHEMBL240-2:
+    description: "Target CHEMBL240: HERG"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL240-2.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL240/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000219
+      activity_type: Ki
+      min pchembl_value: 4.21
+      max pchembl_value: 9.41
+      median pchembl_value: 5.8
+      is_log_data: true
+      activity bin: 6.1
+      Compounds: 579
+      Num Active: 219
+      Num Inactive: 360
+
+  CHEMBL3952-1:
+    description: "Target CHEMBL3952: Kappa opioid receptor"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL3952-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL3952/
+      source: ChEMBL_32
+      organism: Cavia porcellus
+      assay_organism: Cavia porcellus
+      assay_bao_format: BAO_0000249
+      activity_type: Ki
+      min pchembl_value: 4.03
+      max pchembl_value: 10.7
+      median pchembl_value: 7.37
+      is_log_data: true
+      activity bin: 7.9
+      Compounds: 593
+      Num Active: 227
+      Num Inactive: 366
+
+  CHEMBL228-2:
+    description: "Target CHEMBL228: Serotonin transporter"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL228-2.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL228/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000357
+      activity_type: Ki
+      min pchembl_value: 4.31
+      max pchembl_value: 10.89
+      median pchembl_value: 7.7
+      is_log_data: true
+      activity bin: 8.0
+      Compounds: 576
+      Num Active: 236
+      Num Inactive: 340
+
+  CHEMBL218-1:
+    description: "Target CHEMBL218: Cannabinoid CB1 receptor"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL218-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL218/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000357
+      activity_type: Ki
+      min pchembl_value: 4.0
+      max pchembl_value: 9.52
+      median pchembl_value: 6.38
+      is_log_data: true
+      activity bin: 6.7
+      Compounds: 543
+      Num Active: 218
+      Num Inactive: 325
+
+  CHEMBL302-1:
+    description: "Target CHEMBL302: Adenosine A2a receptor"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL302-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL302/
+      source: ChEMBL_32
+      organism: Rattus norvegicus
+      assay_organism: Rattus norvegicus
+      assay_bao_format: BAO_0000249
+      activity_type: Ki
+      min pchembl_value: 4.17
+      max pchembl_value: 9.7
+      median pchembl_value: 6.08
+      is_log_data: true
+      activity bin: 6.4
+      Compounds: 542
+      Num Active: 211
+      Num Inactive: 331
+
+  CHEMBL225-1:
+    description: "Target CHEMBL225: Serotonin 2c (5-HT2c) receptor"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL225-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL225/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000357
+      activity_type: Ki
+      min pchembl_value: 4.72
+      max pchembl_value: 9.68
+      median pchembl_value: 6.9
+      is_log_data: true
+      activity bin: 7.2
+      Compounds: 524
+      Num Active: 200
+      Num Inactive: 324
+
+  CHEMBL273-1:
+    description: "Target CHEMBL273: Serotonin 1a (5-HT1a) receptor"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL273-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL273/
+      source: ChEMBL_32
+      organism: Rattus norvegicus
+      assay_organism: Rattus norvegicus
+      assay_bao_format: BAO_0000221
+      activity_type: Ki
+      min pchembl_value: 4.24
+      max pchembl_value: 10.92
+      median pchembl_value: 7.06
+      is_log_data: true
+      activity bin: 7.300000000000001
+      Compounds: 669
+      Num Active: 274
+      Num Inactive: 395
+
+  CHEMBL1800-1:
+    description: "Target CHEMBL1800: Corticotropin releasing factor receptor 1"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL1800-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL1800/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000219
+      activity_type: Ki
+      min pchembl_value: 4.26
+      max pchembl_value: 9.7
+      median pchembl_value: 7.55
+      is_log_data: true
+      activity bin: 7.9
+      Compounds: 518
+      Num Active: 198
+      Num Inactive: 320
+
+  CHEMBL3952-2:
+    description: "Target CHEMBL3952: Kappa opioid receptor"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL3952-2.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL3952/
+      source: ChEMBL_32
+      organism: Cavia porcellus
+      assay_organism: Cavia porcellus
+      assay_bao_format: BAO_0000357
+      activity_type: Ki
+      min pchembl_value: 4.72
+      max pchembl_value: 10.43
+      median pchembl_value: 7.31
+      is_log_data: true
+      activity bin: 7.800000000000001
+      Compounds: 515
+      Num Active: 207
+      Num Inactive: 308
+
+  CHEMBL1945-1:
+    description: "Target CHEMBL1945: Melatonin receptor 1A"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL1945-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL1945/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000219
+      activity_type: Ki
+      min pchembl_value: 4.13
+      max pchembl_value: 11.0
+      median pchembl_value: 7.64
+      is_log_data: true
+      activity bin: 8.1
+      Compounds: 507
+      Num Active: 194
+      Num Inactive: 313
+
+  CHEMBL1946-1:
+    description: "Target CHEMBL1946: Melatonin receptor 1B"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL1946-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL1946/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000219
+      activity_type: Ki
+      min pchembl_value: 4.19
+      max pchembl_value: 11.0
+      median pchembl_value: 8.05
+      is_log_data: true
+      activity bin: 8.4
+      Compounds: 505
+      Num Active: 198
+      Num Inactive: 307
+
+  CHEMBL3837-1:
+    description: "Target CHEMBL3837: Cathepsin L"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL3837-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL3837/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000357
+      activity_type: Ki
+      min pchembl_value: 4.0
+      max pchembl_value: 10.6
+      median pchembl_value: 6.2
+      is_log_data: true
+      activity bin: 6.6
+      Compounds: 498
+      Num Active: 195
+      Num Inactive: 303
+
+  CHEMBL211-1:
+    description: "Target CHEMBL211: Muscarinic acetylcholine receptor M2"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL211-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL211/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000219
+      activity_type: Ki
+      min pchembl_value: 4.02
+      max pchembl_value: 10.2
+      median pchembl_value: 7.06
+      is_log_data: true
+      activity bin: 7.5
+      Compounds: 485
+      Num Active: 194
+      Num Inactive: 291
+
+  CHEMBL318-1:
+    description: "Target CHEMBL318: Adenosine A1 receptor"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL318-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL318/
+      source: ChEMBL_32
+      organism: Rattus norvegicus
+      assay_organism: Rattus norvegicus
+      assay_bao_format: BAO_0000249
+      activity_type: Ki
+      min pchembl_value: 4.05
+      max pchembl_value: 9.91
+      median pchembl_value: 6.43
+      is_log_data: true
+      activity bin: 6.8
+      Compounds: 491
+      Num Active: 194
+      Num Inactive: 297
+
+  CHEMBL216-1:
+    description: "Target CHEMBL216: Muscarinic acetylcholine receptor M1"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL216-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL216/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000219
+      activity_type: Ki
+      min pchembl_value: 4.02
+      max pchembl_value: 10.3
+      median pchembl_value: 6.78
+      is_log_data: true
+      activity bin: 7.2
+      Compounds: 480
+      Num Active: 194
+      Num Inactive: 286
+
+  CHEMBL3371-1:
+    description: "Target CHEMBL3371: Serotonin 6 (5-HT6) receptor"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL3371-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL3371/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000357
+      activity_type: Ki
+      min pchembl_value: 4.12
+      max pchembl_value: 9.9
+      median pchembl_value: 7.49
+      is_log_data: true
+      activity bin: 7.9
+      Compounds: 476
+      Num Active: 194
+      Num Inactive: 282
+
+  CHEMBL1862-1:
+    description: "Target CHEMBL1862: Tyrosine-protein kinase ABL"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL1862-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL1862/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000357
+      activity_type: Ki
+      min pchembl_value: 5.0
+      max pchembl_value: 10.73
+      median pchembl_value: 8.98
+      is_log_data: true
+      activity bin: 9.1
+      Compounds: 463
+      Num Active: 187
+      Num Inactive: 276
+
+  CHEMBL2366517-1:
+    description: "Target CHEMBL2366517: Protease"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL2366517-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL2366517/
+      source: ChEMBL_32
+      organism: Human immunodeficiency virus 1
+      assay_organism: Human immunodeficiency virus 1
+      assay_bao_format: BAO_0000357
+      activity_type: Ki
+      min pchembl_value: 4.0
+      max pchembl_value: 11.0
+      median pchembl_value: 8.86
+      is_log_data: true
+      activity bin: 9.3
+      Compounds: 467
+      Num Active: 189
+      Num Inactive: 278
+
+  CHEMBL2056-1:
+    description: "Target CHEMBL2056: Dopamine D1 receptor"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL2056-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL2056/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000219
+      activity_type: Ki
+      min pchembl_value: 4.31
+      max pchembl_value: 10.0
+      median pchembl_value: 6.72
+      is_log_data: true
+      activity bin: 7.0
+      Compounds: 443
+      Num Active: 181
+      Num Inactive: 262
+
+  CHEMBL1075104-1:
+    description: "Target CHEMBL1075104: Leucine-rich repeat serine/threonine-protein kinase 2"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL1075104-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL1075104/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000357
+      activity_type: Ki
+      min pchembl_value: 4.31
+      max pchembl_value: 10.0
+      median pchembl_value: 8.16
+      is_log_data: true
+      activity bin: 8.3
+      Compounds: 442
+      Num Active: 180
+      Num Inactive: 262
+
+  CHEMBL4616-1:
+    description: "Target CHEMBL4616: Ghrelin receptor"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL4616-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL4616/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000219
+      activity_type: Ki
+      min pchembl_value: 4.6
+      max pchembl_value: 10.0
+      median pchembl_value: 7.46
+      is_log_data: true
+      activity bin: 8.1
+      Compounds: 434
+      Num Active: 78
+      Num Inactive: 356
+
+  CHEMBL1889-1:
+    description: "Target CHEMBL1889: Vasopressin V1a receptor"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL1889-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL1889/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000219
+      activity_type: Ki
+      min pchembl_value: 4.26
+      max pchembl_value: 10.43
+      median pchembl_value: 7.36
+      is_log_data: true
+      activity bin: 7.7
+      Compounds: 431
+      Num Active: 168
+      Num Inactive: 263
+
+  CHEMBL313-1:
+    description: "Target CHEMBL313: Serotonin transporter"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL313-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL313/
+      source: ChEMBL_32
+      organism: Rattus norvegicus
+      assay_organism: Rattus norvegicus
+      assay_bao_format: BAO_0000357
+      activity_type: Ki
+      min pchembl_value: 4.8
+      max pchembl_value: 11.0
+      median pchembl_value: 7.82
+      is_log_data: true
+      activity bin: 8.1
+      Compounds: 455
+      Num Active: 170
+      Num Inactive: 285
+
+  CHEMBL225-2:
+    description: "Target CHEMBL225: Serotonin 2c (5-HT2c) receptor"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL225-2.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL225/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000219
+      activity_type: Ki
+      min pchembl_value: 4.0
+      max pchembl_value: 9.7
+      median pchembl_value: 7.08
+      is_log_data: true
+      activity bin: 7.4
+      Compounds: 423
+      Num Active: 162
+      Num Inactive: 261
+
+  CHEMBL270-1:
+    description: "Target CHEMBL270: Mu opioid receptor"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL270-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL270/
+      source: ChEMBL_32
+      organism: Rattus norvegicus
+      assay_organism: Rattus norvegicus
+      assay_bao_format: BAO_0000249
+      activity_type: Ki
+      min pchembl_value: 4.35
+      max pchembl_value: 10.9
+      median pchembl_value: 7.83
+      is_log_data: true
+      activity bin: 8.4
+      Compounds: 587
+      Num Active: 228
+      Num Inactive: 359
+
+  CHEMBL270-2:
+    description: "Target CHEMBL270: Mu opioid receptor"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL270-2.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL270/
+      source: ChEMBL_32
+      organism: Rattus norvegicus
+      assay_organism: Rattus norvegicus
+      assay_bao_format: BAO_0000219
+      activity_type: Ki
+      min pchembl_value: 4.94
+      max pchembl_value: 11.0
+      median pchembl_value: 7.99
+      is_log_data: true
+      activity bin: 8.4
+      Compounds: 413
+      Num Active: 169
+      Num Inactive: 244
+
+  CHEMBL313-2:
+    description: "Target CHEMBL313: Serotonin transporter"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL313-2.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL313/
+      source: ChEMBL_32
+      organism: Rattus norvegicus
+      assay_organism: Rattus norvegicus
+      assay_bao_format: BAO_0000221
+      activity_type: Ki
+      min pchembl_value: 4.15
+      max pchembl_value: 10.77
+      median pchembl_value: 6.88
+      is_log_data: true
+      activity bin: 7.3
+      Compounds: 585
+      Num Active: 224
+      Num Inactive: 361
+
+  CHEMBL4153-1:
+    description: "Target CHEMBL4153: Sigma-1 receptor"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL4153-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL4153/
+      source: ChEMBL_32
+      organism: Cavia porcellus
+      assay_organism: Cavia porcellus
+      assay_bao_format: BAO_0000019
+      activity_type: Ki
+      min pchembl_value: 4.01
+      max pchembl_value: 10.96
+      median pchembl_value: 7.32
+      is_log_data: true
+      activity bin: 7.6
+      Compounds: 524
+      Num Active: 211
+      Num Inactive: 313
+
+  CHEMBL287-1:
+    description: "Target CHEMBL287: Sigma opioid receptor"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL287-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL287/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000219
+      activity_type: Ki
+      min pchembl_value: 4.37
+      max pchembl_value: 10.28
+      median pchembl_value: 7.51
+      is_log_data: true
+      activity bin: 7.8
+      Compounds: 407
+      Num Active: 154
+      Num Inactive: 253
+
+  CHEMBL233-1:
+    description: "Target CHEMBL233: Mu opioid receptor"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL233-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL233/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000357
+      activity_type: Ki
+      min pchembl_value: 5.09
+      max pchembl_value: 11.0
+      median pchembl_value: 7.33
+      is_log_data: true
+      activity bin: 7.800000000000001
+      Compounds: 399
+      Num Active: 162
+      Num Inactive: 237
+
+  CHEMBL2326-1:
+    description: "Target CHEMBL2326: Carbonic anhydrase VII"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL2326-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL2326/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000357
+      activity_type: Ki
+      min pchembl_value: 4.09
+      max pchembl_value: 9.72
+      median pchembl_value: 7.06
+      is_log_data: true
+      activity bin: 7.3
+      Compounds: 397
+      Num Active: 155
+      Num Inactive: 242
+
+  CHEMBL236-1:
+    description: "Target CHEMBL236: Delta opioid receptor"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL236-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL236/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000357
+      activity_type: Ki
+      min pchembl_value: 4.72
+      max pchembl_value: 10.68
+      median pchembl_value: 7.34
+      is_log_data: true
+      activity bin: 7.6
+      Compounds: 397
+      Num Active: 158
+      Num Inactive: 239
+
+  CHEMBL3510-1:
+    description: "Target CHEMBL3510: Carbonic anhydrase XIV"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL3510-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL3510/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000357
+      activity_type: Ki
+      min pchembl_value: 4.07
+      max pchembl_value: 9.59
+      median pchembl_value: 6.98
+      is_log_data: true
+      activity bin: 7.2
+      Compounds: 393
+      Num Active: 153
+      Num Inactive: 240
+
+  CHEMBL5112-1:
+    description: "Target CHEMBL5112: GABA receptor alpha-5 subunit"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL5112-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL5112/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000357
+      activity_type: Ki
+      min pchembl_value: 5.3
+      max pchembl_value: 10.0
+      median pchembl_value: 8.09
+      is_log_data: true
+      activity bin: 8.3
+      Compounds: 386
+      Num Active: 152
+      Num Inactive: 234
+
+  CHEMBL344-2:
+    description: "Target CHEMBL344: Melanin-concentrating hormone receptor 1"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL344-2.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL344/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000357
+      activity_type: Ki
+      min pchembl_value: 4.65
+      max pchembl_value: 10.47
+      median pchembl_value: 7.68
+      is_log_data: true
+      activity bin: 7.9
+      Compounds: 380
+      Num Active: 146
+      Num Inactive: 234
+
+  CHEMBL273-2:
+    description: "Target CHEMBL273: Serotonin 1a (5-HT1a) receptor"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL273-2.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL273/
+      source: ChEMBL_32
+      organism: Rattus norvegicus
+      assay_organism: Rattus norvegicus
+      assay_bao_format: BAO_0000249
+      activity_type: Ki
+      min pchembl_value: 4.88
+      max pchembl_value: 9.8
+      median pchembl_value: 7.44
+      is_log_data: true
+      activity bin: 7.7
+      Compounds: 438
+      Num Active: 176
+      Num Inactive: 262
+
+  CHEMBL237-1:
+    description: "Target CHEMBL237: Kappa opioid receptor"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL237-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL237/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000357
+      activity_type: Ki
+      min pchembl_value: 4.74
+      max pchembl_value: 10.52
+      median pchembl_value: 6.83
+      is_log_data: true
+      activity bin: 7.2
+      Compounds: 374
+      Num Active: 149
+      Num Inactive: 225
+
+  CHEMBL2954-1:
+    description: "Target CHEMBL2954: Cathepsin S"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL2954-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL2954/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000357
+      activity_type: Ki
+      min pchembl_value: 4.17
+      max pchembl_value: 9.89
+      median pchembl_value: 6.85
+      is_log_data: true
+      activity bin: 7.2
+      Compounds: 371
+      Num Active: 149
+      Num Inactive: 222
+
+  CHEMBL3729-1:
+    description: "Target CHEMBL3729: Carbonic anhydrase IV"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL3729-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL3729/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000357
+      activity_type: Ki
+      min pchembl_value: 4.05
+      max pchembl_value: 8.35
+      median pchembl_value: 5.54
+      is_log_data: true
+      activity bin: 6.0
+      Compounds: 364
+      Num Active: 144
+      Num Inactive: 220
+
+  CHEMBL222-2:
+    description: "Target CHEMBL222: Norepinephrine transporter"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL222-2.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL222/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000357
+      activity_type: Ki
+      min pchembl_value: 5.03
+      max pchembl_value: 10.1
+      median pchembl_value: 6.92
+      is_log_data: true
+      activity bin: 7.2
+      Compounds: 365
+      Num Active: 146
+      Num Inactive: 219
+
+  CHEMBL219-2:
+    description: "Target CHEMBL219: Dopamine D4 receptor"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL219-2.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL219/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000357
+      activity_type: Ki
+      min pchembl_value: 4.8
+      max pchembl_value: 10.52
+      median pchembl_value: 7.24
+      is_log_data: true
+      activity bin: 7.5
+      Compounds: 364
+      Num Active: 149
+      Num Inactive: 215
+
+  CHEMBL251-1:
+    description: "Target CHEMBL251: Adenosine A2a receptor"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL251-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL251/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000357
+      activity_type: Ki
+      min pchembl_value: 4.39
+      max pchembl_value: 10.0
+      median pchembl_value: 7.25
+      is_log_data: true
+      activity bin: 7.7
+      Compounds: 360
+      Num Active: 141
+      Num Inactive: 219
+
+  CHEMBL4361-1:
+    description: "Target CHEMBL4361: Induced myeloid leukemia cell differentiation protein Mcl-1"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL4361-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL4361/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000357
+      activity_type: Ki
+      min pchembl_value: 3.88
+      max pchembl_value: 10.4
+      median pchembl_value: 6.34
+      is_log_data: true
+      activity bin: 6.6
+      Compounds: 360
+      Num Active: 145
+      Num Inactive: 215
+
+  CHEMBL223-1:
+    description: "Target CHEMBL223: Alpha-1d adrenergic receptor"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL223-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL223/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000219
+      activity_type: Ki
+      min pchembl_value: 5.0
+      max pchembl_value: 10.5
+      median pchembl_value: 7.78
+      is_log_data: true
+      activity bin: 8.1
+      Compounds: 358
+      Num Active: 141
+      Num Inactive: 217
+
+  CHEMBL4792-2:
+    description: "Target CHEMBL4792: Orexin receptor 2"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL4792-2.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL4792/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000019
+      activity_type: Ki
+      min pchembl_value: 5.0
+      max pchembl_value: 8.3
+      median pchembl_value: 6.13
+      is_log_data: true
+      activity bin: 6.3
+      Compounds: 358
+      Num Active: 144
+      Num Inactive: 214
+
+  CHEMBL2492-1:
+    description: "Target CHEMBL2492: Neuronal acetylcholine receptor protein alpha-7 subunit"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL2492-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL2492/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000219
+      activity_type: Ki
+      min pchembl_value: 4.0
+      max pchembl_value: 9.29
+      median pchembl_value: 6.46
+      is_log_data: true
+      activity bin: 7.0
+      Compounds: 357
+      Num Active: 137
+      Num Inactive: 220
+
+  CHEMBL3952-3:
+    description: "Target CHEMBL3952: Kappa opioid receptor"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL3952-3.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL3952/
+      source: ChEMBL_32
+      organism: Cavia porcellus
+      assay_organism: Cavia porcellus
+      assay_bao_format: BAO_0000019
+      activity_type: Ki
+      min pchembl_value: 4.73
+      max pchembl_value: 10.7
+      median pchembl_value: 7.09
+      is_log_data: true
+      activity bin: 7.5
+      Compounds: 355
+      Num Active: 137
+      Num Inactive: 218
+
+  CHEMBL4361-2:
+    description: "Target CHEMBL4361: Induced myeloid leukemia cell differentiation protein Mcl-1"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL4361-2.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL4361/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000019
+      activity_type: Ki
+      min pchembl_value: 3.67
+      max pchembl_value: 9.7
+      median pchembl_value: 6.38
+      is_log_data: true
+      activity bin: 6.6
+      Compounds: 354
+      Num Active: 140
+      Num Inactive: 214
+
+  CHEMBL284-1:
+    description: "Target CHEMBL284: Dipeptidyl peptidase IV"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL284-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL284/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000357
+      activity_type: Ki
+      min pchembl_value: 4.0
+      max pchembl_value: 10.09
+      median pchembl_value: 7.4
+      is_log_data: true
+      activity bin: 7.6000000000000005
+      Compounds: 351
+      Num Active: 143
+      Num Inactive: 208
+
+  CHEMBL231-1:
+    description: "Target CHEMBL231: Histamine H1 receptor"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL231-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL231/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000219
+      activity_type: Ki
+      min pchembl_value: 4.1
+      max pchembl_value: 9.75
+      median pchembl_value: 7.11
+      is_log_data: true
+      activity bin: 7.6
+      Compounds: 350
+      Num Active: 138
+      Num Inactive: 212
+
+  CHEMBL5102-1:
+    description: "Target CHEMBL5102: Vanilloid receptor"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL5102-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL5102/
+      source: ChEMBL_32
+      organism: Rattus norvegicus
+      assay_organism: Rattus norvegicus
+      assay_bao_format: BAO_0000219
+      activity_type: Ki
+      min pchembl_value: 4.92
+      max pchembl_value: 10.14
+      median pchembl_value: 6.89
+      is_log_data: true
+      activity bin: 7.1
+      Compounds: 348
+      Num Active: 142
+      Num Inactive: 206
+
+  CHEMBL4908-2:
+    description: "Target CHEMBL4908: Trace amine-associated receptor 1"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL4908-2.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL4908/
+      source: ChEMBL_32
+      organism: Mus musculus
+      assay_organism: Mus musculus
+      assay_bao_format: BAO_0000219
+      activity_type: Ki
+      min pchembl_value: 5.37
+      max pchembl_value: 9.3
+      median pchembl_value: 8.33
+      is_log_data: true
+      activity bin: 8.5
+      Compounds: 347
+      Num Active: 121
+      Num Inactive: 226
+
+  CHEMBL1871-1:
+    description: "Target CHEMBL1871: Androgen Receptor"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL1871-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL1871/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000219
+      activity_type: Ki
+      min pchembl_value: 5.21
+      max pchembl_value: 9.7
+      median pchembl_value: 7.58
+      is_log_data: true
+      activity bin: 7.800000000000001
+      Compounds: 347
+      Num Active: 142
+      Num Inactive: 205
+
+  CHEMBL2035-1:
+    description: "Target CHEMBL2035: Muscarinic acetylcholine receptor M5"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL2035-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL2035/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000219
+      activity_type: Ki
+      min pchembl_value: 4.01
+      max pchembl_value: 9.97
+      median pchembl_value: 6.28
+      is_log_data: true
+      activity bin: 6.6
+      Compounds: 346
+      Num Active: 138
+      Num Inactive: 208
+
+  CHEMBL4078-1:
+    description: "Target CHEMBL4078: Acetylcholinesterase"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL4078-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL4078/
+      source: ChEMBL_32
+      organism: Electrophorus electricus
+      assay_organism: Electrophorus electricus
+      assay_bao_format: BAO_0000357
+      activity_type: Ki
+      min pchembl_value: 4.0
+      max pchembl_value: 10.38
+      median pchembl_value: 5.36
+      is_log_data: true
+      activity bin: 5.8
+      Compounds: 350
+      Num Active: 138
+      Num Inactive: 212
+
+  CHEMBL1833-1:
+    description: "Target CHEMBL1833: Serotonin 2b (5-HT2b) receptor"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL1833-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL1833/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000357
+      activity_type: Ki
+      min pchembl_value: 5.1
+      max pchembl_value: 9.4
+      median pchembl_value: 6.69
+      is_log_data: true
+      activity bin: 7.1
+      Compounds: 338
+      Num Active: 128
+      Num Inactive: 210
+
+  CHEMBL210-1:
+    description: "Target CHEMBL210: Beta-2 adrenergic receptor"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL210-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL210/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000219
+      activity_type: Ki
+      min pchembl_value: 3.41
+      max pchembl_value: 10.92
+      median pchembl_value: 7.03
+      is_log_data: true
+      activity bin: 7.4
+      Compounds: 333
+      Num Active: 135
+      Num Inactive: 198
+
+  CHEMBL4105864-1:
+    description: "Target CHEMBL4105864: Sigma intracellular receptor 2"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL4105864-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL4105864/
+      source: ChEMBL_32
+      organism: Rattus norvegicus
+      assay_organism: Rattus norvegicus
+      assay_bao_format: BAO_0000249
+      activity_type: Ki
+      min pchembl_value: 4.52
+      max pchembl_value: 9.92
+      median pchembl_value: 6.82
+      is_log_data: true
+      activity bin: 7.1
+      Compounds: 396
+      Num Active: 159
+      Num Inactive: 237
+
+  CHEMBL269-1:
+    description: "Target CHEMBL269: Delta opioid receptor"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL269-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL269/
+      source: ChEMBL_32
+      organism: Rattus norvegicus
+      assay_organism: Rattus norvegicus
+      assay_bao_format: BAO_0000249
+      activity_type: Ki
+      min pchembl_value: 4.33
+      max pchembl_value: 10.66
+      median pchembl_value: 7.29
+      is_log_data: true
+      activity bin: 7.9
+      Compounds: 467
+      Num Active: 190
+      Num Inactive: 277
+
+  CHEMBL270-3:
+    description: "Target CHEMBL270: Mu opioid receptor"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL270-3.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL270/
+      source: ChEMBL_32
+      organism: Rattus norvegicus
+      assay_organism: Rattus norvegicus
+      assay_bao_format: BAO_0000019
+      activity_type: Ki
+      min pchembl_value: 4.88
+      max pchembl_value: 10.6
+      median pchembl_value: 7.45
+      is_log_data: true
+      activity bin: 7.9
+      Compounds: 431
+      Num Active: 169
+      Num Inactive: 262
+
+  CHEMBL229-1:
+    description: "Target CHEMBL229: Alpha-1a adrenergic receptor"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL229-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL229/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000219
+      activity_type: Ki
+      min pchembl_value: 5.16
+      max pchembl_value: 10.3
+      median pchembl_value: 7.74
+      is_log_data: true
+      activity bin: 8.1
+      Compounds: 326
+      Num Active: 133
+      Num Inactive: 193
+
+  CHEMBL229-2:
+    description: "Target CHEMBL229: Alpha-1a adrenergic receptor"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL229-2.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL229/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000357
+      activity_type: Ki
+      min pchembl_value: 4.83
+      max pchembl_value: 10.4
+      median pchembl_value: 7.77
+      is_log_data: true
+      activity bin: 8.1
+      Compounds: 322
+      Num Active: 118
+      Num Inactive: 204
+
+  CHEMBL1833-2:
+    description: "Target CHEMBL1833: Serotonin 2b (5-HT2b) receptor"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL1833-2.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL1833/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000219
+      activity_type: Ki
+      min pchembl_value: 5.1
+      max pchembl_value: 9.96
+      median pchembl_value: 6.8
+      is_log_data: true
+      activity bin: 7.1
+      Compounds: 318
+      Num Active: 123
+      Num Inactive: 195
+
+  CHEMBL232-1:
+    description: "Target CHEMBL232: Alpha-1b adrenergic receptor"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL232-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL232/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000219
+      activity_type: Ki
+      min pchembl_value: 4.34
+      max pchembl_value: 10.15
+      median pchembl_value: 7.26
+      is_log_data: true
+      activity bin: 7.5
+      Compounds: 316
+      Num Active: 128
+      Num Inactive: 188
+
+  CHEMBL318-2:
+    description: "Target CHEMBL318: Adenosine A1 receptor"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL318-2.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL318/
+      source: ChEMBL_32
+      organism: Rattus norvegicus
+      assay_organism: Rattus norvegicus
+      assay_bao_format: BAO_0000019
+      activity_type: Ki
+      min pchembl_value: 4.07
+      max pchembl_value: 9.76
+      median pchembl_value: 6.88
+      is_log_data: true
+      activity bin: 7.2
+      Compounds: 378
+      Num Active: 143
+      Num Inactive: 235
+
+  CHEMBL224-2:
+    description: "Target CHEMBL224: Serotonin 2a (5-HT2a) receptor"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL224-2.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL224/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000019
+      activity_type: Ki
+      min pchembl_value: 5.26
+      max pchembl_value: 9.33
+      median pchembl_value: 7.65
+      is_log_data: true
+      activity bin: 7.9
+      Compounds: 311
+      Num Active: 117
+      Num Inactive: 194
+
+  CHEMBL269-2:
+    description: "Target CHEMBL269: Delta opioid receptor"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL269-2.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL269/
+      source: ChEMBL_32
+      organism: Rattus norvegicus
+      assay_organism: Rattus norvegicus
+      assay_bao_format: BAO_0000019
+      activity_type: Ki
+      min pchembl_value: 4.3
+      max pchembl_value: 10.72
+      median pchembl_value: 7.82
+      is_log_data: true
+      activity bin: 8.3
+      Compounds: 404
+      Num Active: 164
+      Num Inactive: 240
+
+  CHEMBL1821-1:
+    description: "Target CHEMBL1821: Muscarinic acetylcholine receptor M4"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL1821-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL1821/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000219
+      activity_type: Ki
+      min pchembl_value: 4.0
+      max pchembl_value: 9.85
+      median pchembl_value: 6.8
+      is_log_data: true
+      activity bin: 7.2
+      Compounds: 308
+      Num Active: 123
+      Num Inactive: 185
+
+  CHEMBL3227-1:
+    description: "Target CHEMBL3227: Metabotropic glutamate receptor 5"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL3227-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL3227/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000219
+      activity_type: Ki
+      min pchembl_value: 4.09
+      max pchembl_value: 9.52
+      median pchembl_value: 7.32
+      is_log_data: true
+      activity bin: 7.6
+      Compounds: 307
+      Num Active: 124
+      Num Inactive: 183
+
+  CHEMBL3155-1:
+    description: "Target CHEMBL3155: Serotonin 7 (5-HT7) receptor"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL3155-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL3155/
+      source: ChEMBL_32
+      organism: Homo sapiens
+      assay_organism: Homo sapiens
+      assay_bao_format: BAO_0000357
+      activity_type: Ki
+      min pchembl_value: 4.07
+      max pchembl_value: 9.96
+      median pchembl_value: 7.16
+      is_log_data: true
+      activity bin: 7.5
+      Compounds: 301
+      Num Active: 121
+      Num Inactive: 180
+
+  CHEMBL1293269-1:
+    description: "Target CHEMBL1293269: NS3"
+    notes: |
+      All compounds have been salt stripped and neutralized using the RDKit's ChargeParent standardizer.
+      The ChEMBL IDs in this file correspond to the original structure : the one which was measured
+
+    args:
+      filename: "{{ CATALOG_DIR }}/chemblKi_SIMPD/CHEMBL1293269-1.csv"
+      smilesColumn: canonical_smiles
+    driver: intake_rdkit.smiles.SmilesSource
+    metadata:
+      url: https://www.ebi.ac.uk/chembl/target_report_card/CHEMBL1293269/
+      source: ChEMBL_32
+      organism: Hepatitis C virus
+      assay_organism: Hepatitis C virus
+      assay_bao_format: BAO_0000357
+      activity_type: Ki
+      min pchembl_value: 4.0
+      max pchembl_value: 10.3
+      median pchembl_value: 6.6
+      is_log_data: true
+      activity bin: 7.0
+      Compounds: 300
+      Num Active: 121
+      Num Inactive: 179
+
